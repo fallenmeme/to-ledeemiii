@@ -1,29 +1,24 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    const paragraphs = document.querySelectorAll("p");
+    const items = document.querySelectorAll("p, h1, .signature");
 
-    const observer = new IntersectionObserver((entries) => {
+    const observer = new IntersectionObserver(entries => {
+
         entries.forEach(entry => {
+
             if(entry.isIntersecting){
-                entry.target.classList.add("visible");
+                entry.target.classList.add("show");
             }
+
         });
-    }, {
-        threshold: 0.1
+
     });
 
-    paragraphs.forEach(p => {
-        p.style.opacity = "0";
-        p.style.transform = "translateY(20px)";
-        p.style.transition = "all 0.8s ease";
+    items.forEach(item => {
 
-        observer.observe(p);
+        item.classList.add("hidden");
+        observer.observe(item);
+
     });
 
-    document.querySelectorAll("p").forEach(p => {
-        p.addEventListener("transitionend", () => {
-            p.style.opacity = "1";
-            p.style.transform = "translateY(0)";
-        });
-    });
 });
