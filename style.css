@@ -7,112 +7,127 @@
 }
 
 body{
-    background:#0f1d52;
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:flex-start;
+    background:#10225d;
+    font-family:'Quicksand',sans-serif;
     overflow-x:hidden;
-    font-family:'Quicksand', sans-serif;
-    padding:40px 15px;
 }
 
-.page{
+.wrapper{
     width:100%;
     display:flex;
     justify-content:center;
+    padding:20px 10px;
 }
 
-.letter-container{
-    position:relative;
+.letter{
     width:100%;
     max-width:700px;
+
+    background-image:url('letter-bg.jpg');
+    background-size:100% 100%;
+    background-repeat:no-repeat;
+
+    padding-top:120px;
+    padding-bottom:120px;
+
+    min-height:1700px;
 }
 
-.letter-bg{
-    width:100%;
-    display:block;
-    border-radius:10px;
-    user-select:none;
-    pointer-events:none;
-}
+.content{
+    width:70%;
+    margin:auto;
 
-.letter-content{
-    position:absolute;
-    top:8%;
-    left:12%;
-    right:12%;
+    color:white;
 
+    text-shadow:
+    0 1px 2px rgba(0,0,0,.25);
 
-    color:#ffffff;
-    text-shadow:0 1px 3px rgba(0,0,0,.3);
-
-    scrollbar-width:none;
-}
-
-.letter-content::-webkit-scrollbar{
-    display:none;
+    text-align:justify;
 }
 
 h1{
     text-align:center;
-    margin-bottom:25px;
-    font-size:2rem;
-    font-family:'Dancing Script', cursive;
+    margin-bottom:30px;
+
+    font-size:2.2rem;
+    font-family:'Dancing Script',cursive;
 }
 
 p{
+    margin-bottom:22px;
+    line-height:2;
     font-size:1rem;
-    line-height:1.9;
-    margin-bottom:20px;
-    text-align:justify;
 }
 
 .signature{
-    text-align:right;
-    margin-top:30px;
-    font-size:1.3rem;
-    font-family:'Dancing Script', cursive;
+    width:100%;
+    text-align:center;
+
+    margin-top:50px;
+
+    font-size:1.6rem;
+    font-family:'Dancing Script',cursive;
 }
 
-@media (max-width:768px){
+/* Tablet */
+@media(max-width:768px){
 
-    .letter-content{
-        top:8%;
-        left:11%;
-        right:11%;
-        bottom:9%;
+    .letter{
+        min-height:1500px;
+        padding-top:90px;
+        padding-bottom:90px;
+    }
+
+    .content{
+        width:72%;
     }
 
     h1{
-        font-size:1.7rem;
+        font-size:1.9rem;
     }
 
     p{
-        font-size:0.92rem;
-        line-height:1.8;
+        font-size:.92rem;
+        line-height:1.9;
+    }
+
+    .signature{
+        font-size:1.4rem;
     }
 }
 
-@media (max-width:480px){
+/* Mobile */
+@media(max-width:480px){
 
-    body{
-        padding:10px;
+    .wrapper{
+        padding:0;
     }
 
-    .letter-content{
-        top:8%;
-        left:10%;
-        right:10%;
-        bottom:8%;
+    .letter{
+        width:100%;
+        min-height:1400px;
+
+        padding-top:80px;
+        padding-bottom:80px;
+    }
+
+    .content{
+        width:68%;
     }
 
     h1{
         font-size:1.5rem;
+        margin-bottom:20px;
     }
 
     p{
-        font-size:0.85rem;
-        line-height:1.7;
+        font-size:.8rem;
+        line-height:1.8;
+        margin-bottom:18px;
+    }
+
+    .signature{
+        font-size:1.25rem;
+        margin-top:35px;
     }
 }
